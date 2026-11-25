@@ -31,15 +31,28 @@ A hardened, license-compliant **Ubuntu LTS zero-binary runtime-installer wrapper
 <!-- versions:start -->
 | Component | Resolved Version |
 | --- | --- |
-| 2025 Track Base OS | `Ubuntu 24.04 LTS (noble)` |
+| 2025 Track Base OS | `Ubuntu 24.04 (noble)` |
 | 2025 Track Tested CU (runtime-fetched) | `17.0.5065.9-3` |
-| 2022 Track Base OS | `Ubuntu 22.04 LTS (jammy)` |
+| 2022 Track Base OS | `Ubuntu 22.04 (jammy)` |
 | 2022 Track Tested CU (runtime-fetched) | `16.0.4325.4-2` |
 | Client Tools (runtime-fetched) | `mssql-tools18 18.7.1.1-1` |
 | Proprietary Binaries in Published Image | `None (0)` |
 | Architectures | `linux/amd64` |
+| Uncompressed size (per track) | `2025: 37.8 MB, 2022: 37.9 MB` |
 | Last verified build (UTC) | `2026-11-25` |
-| Security gate (Trivy + Grype on SBOM) | **0 fixable Critical/High** |
+| Published digest (`latest` / `2025-latest`) | `dgcosenza/mssql-fts@sha256:847c8ac21f323dda1578ff0bf611cef64ac2021970c4b818ce7d24aaaae2f973` |
+| GHCR mirror (`latest` / `2025-latest`) | `ghcr.io/dgcosenza/mssql-fts@sha256:847c8ac21f323dda1578ff0bf611cef64ac2021970c4b818ce7d24aaaae2f973` |
+| Published digest (`2022-latest`) | `dgcosenza/mssql-fts@sha256:e733936a057ebd55f3bbae961c77d0a1410217e39628a4c3a4333ae6310f3944` |
+| GHCR mirror (`2022-latest`) | `ghcr.io/dgcosenza/mssql-fts@sha256:e733936a057ebd55f3bbae961c77d0a1410217e39628a4c3a4333ae6310f3944` |
+| Supply chain | Cosign OIDC signed + SPDX & CycloneDX SBOM attestations + SLSA Build L3 provenance |
+| Security gate (Trivy + Grype on SBOM) | **0 fixable Critical/High** (0 upstream-unfixed) |
+
+**Recent upstream status:**
+- **SQL Server 2025 + FTS (runtime-fetched):** `17.0.5065.9` -> `17.0.5065.9` (APT package `17.0.5065.9-3`, Ubuntu 24.04 LTS)
+- **SQL Server 2022 + FTS (runtime-fetched):** `16.0.4325.4` (APT package `16.0.4325.4-2`, Ubuntu 22.04 LTS)
+- **mssql-tools18 (runtime-fetched):** `18.7.1.1-1`
+- **Primary track version changed:** `no`
+- **Proprietary binaries in published image:** `None (0)` — packages are downloaded and GPG-verified at container startup after `ACCEPT_EULA=Y`.
 <!-- versions:end -->
 
 ---

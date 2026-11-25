@@ -9,10 +9,16 @@
   "architectures": [
     "linux/amd64"
   ],
+  "sizes_mb": {
+    "2025": "37.8",
+    "2022": "37.9"
+  },
+  "signed": true,
+  "slsa_provenance": true,
   "components": {
-    "2025 Track Base OS": "Ubuntu 24.04 LTS (noble)",
+    "2025 Track Base OS": "Ubuntu 24.04 (noble)",
     "2025 Track Tested CU (runtime-fetched)": "17.0.5065.9-3",
-    "2022 Track Base OS": "Ubuntu 22.04 LTS (jammy)",
+    "2022 Track Base OS": "Ubuntu 22.04 (jammy)",
     "2022 Track Tested CU (runtime-fetched)": "16.0.4325.4-2",
     "Client Tools (runtime-fetched)": "mssql-tools18 18.7.1.1-1",
     "Proprietary Binaries in Published Image": "None (0)"
@@ -20,11 +26,11 @@
   "base_image": "ubuntu:24.04",
   "base_digest": "sha256:562111b88caa79c71391c0c4d3c2114a7d5c35915c20561fd893cb1e07929e6b",
   "build_date": "2026-11-25",
-  "built_at_utc": "",
-  "image_digest": "",
-  "ghcr_digest": "",
-  "image_digest_2022": "",
-  "ghcr_digest_2022": "",
+  "built_at_utc": "2026-11-25T13:00:49Z",
+  "image_digest": "dgcosenza/mssql-fts@sha256:847c8ac21f323dda1578ff0bf611cef64ac2021970c4b818ce7d24aaaae2f973",
+  "ghcr_digest": "ghcr.io/dgcosenza/mssql-fts@sha256:847c8ac21f323dda1578ff0bf611cef64ac2021970c4b818ce7d24aaaae2f973",
+  "image_digest_2022": "dgcosenza/mssql-fts@sha256:e733936a057ebd55f3bbae961c77d0a1410217e39628a4c3a4333ae6310f3944",
+  "ghcr_digest_2022": "ghcr.io/dgcosenza/mssql-fts@sha256:e733936a057ebd55f3bbae961c77d0a1410217e39628a4c3a4333ae6310f3944",
   "fixable_critical_high": 0,
   "unfixed_cves": []
 }
