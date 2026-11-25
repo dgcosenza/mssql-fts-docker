@@ -70,6 +70,8 @@ LABEL org.opencontainers.image.title="Microsoft SQL Server + Full-Text Search Ru
       io.github.dgcosenza.mssql-fts.tested_version="${MSSQL_TESTED_VERSION}" \
       io.github.dgcosenza.mssql-fts.proprietary_binaries="none"
 
+# Intentionally squash the upgraded Ubuntu LTS rootfs into a single clean layer to eliminate overwritten base files.
+# hadolint ignore=DL3067
 COPY --from=builder / /
 
 ENV PATH="/opt/mssql/bin:/opt/mssql-tools18/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin" \
