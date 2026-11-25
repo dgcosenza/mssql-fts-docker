@@ -1,0 +1,30 @@
+{
+  "image": "dgcosenza/mssql-fts",
+  "upstream_name": "Microsoft SQL Server + Full-Text Search (runtime-fetched)",
+  "upstream_license": "Proprietary-EULA",
+  "packaging_license": "MIT",
+  "upstream_version": "17.0.5065.9",
+  "upstream_commit": "",
+  "changelog_version": "17.0.5065.9",
+  "architectures": [
+    "linux/amd64"
+  ],
+  "components": {
+    "2025 Track Base OS": "Ubuntu 24.04 LTS (noble)",
+    "2025 Track Tested CU (runtime-fetched)": "17.0.5065.9-3",
+    "2022 Track Base OS": "Ubuntu 22.04 LTS (jammy)",
+    "2022 Track Tested CU (runtime-fetched)": "16.0.4325.4-2",
+    "Client Tools (runtime-fetched)": "mssql-tools18 18.7.1.1-1",
+    "Proprietary Binaries in Published Image": "None (0)"
+  },
+  "base_image": "ubuntu:24.04",
+  "base_digest": "sha256:562111b88caa79c71391c0c4d3c2114a7d5c35915c20561fd893cb1e07929e6b",
+  "build_date": "2026-11-25",
+  "built_at_utc": "",
+  "image_digest": "",
+  "ghcr_digest": "",
+  "image_digest_2022": "",
+  "ghcr_digest_2022": "",
+  "fixable_critical_high": 0,
+  "unfixed_cves": []
+}

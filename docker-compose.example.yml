@@ -1,0 +1,39 @@
+services:
+  mssql-fts:
+    image: dgcosenza/mssql-fts:latest
+    container_name: mssql-fts
+    restart: unless-stopped
+    cap_drop:
+      - ALL
+    cap_add:
+      - SETUID
+      - SETGID
+      - CHOWN
+      - FOWNER
+      - DAC_OVERRIDE
+      - SETFCAP
+      - SYS_PTRACE
+    security_opt:
+      - no-new-privileges:true
+    ports:
+      - "127.0.0.1:1433:1433"
+    environment:
+      # Required: explicitly accept Microsoft SQL Server License Terms
+      ACCEPT_EULA: "Y"
+      # Developer (free non-production), Express (free limited), Standard, or Enterprise
+      MSSQL_PID: "Developer"
+      # Supply a strong password via a .env file or MSSQL_SA_PASSWORD_FILE secret (never hardcode)
+      MSSQL_SA_PASSWORD: "${MSSQL_SA_PASSWORD}"
+      MSSQL_FTS_CACHE: "true"
+      TZ: "UTC"
+    volumes:
+      - mssql_data:/var/opt/mssql
+    healthcheck:
+      test: ["CMD", "/usr/local/bin/mssql-fts-healthcheck"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 4m
+
+volumes:
+  mssql_data:

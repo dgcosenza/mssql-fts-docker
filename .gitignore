@@ -1,0 +1,12 @@
+.ci-in/
+.ci-meta/
+.rel/
+*.sarif
+trivy-report-*.txt
+trivy-report-*.json
+grype-report-*.txt
+sbom-*.json
+cve-diff*.json
+track-meta-*.json
+upstream-changes.md
+versions-new.json

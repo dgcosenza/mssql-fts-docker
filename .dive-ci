@@ -1,0 +1,8 @@
+# Efficiency gate (overall >= 95% strict).
+# highestUserWastedPercent is tuned to 0.25 because this zero-binary runtime
+# wrapper installs only tiny open-source utilities (~20 MB delta), so daily
+# `apt-get -y upgrade` overwrites on Ubuntu LTS represent ~15-20% of user bytes
+# while overall image efficiency remains >95%.
+rules:
+  lowestEfficiency: 0.95
+  highestUserWastedPercent: 0.25
