@@ -297,7 +297,7 @@ docker buildx build --platform linux/amd64 --load \
 - **Ubuntu 24.04 LTS / 22.04 LTS base instead of Debian 13:** Microsoft officially publishes and supports `mssql-server` and `mssql-server-fts` APT repositories only on Ubuntu LTS (not Debian). Using Ubuntu 24.04 LTS (for SQL Server 2025) and Ubuntu 22.04 LTS (for SQL Server 2022) follows Microsoft's official support matrix.
 - **`linux/amd64` only:** Microsoft does not publish ARM64 Linux packages for SQL Server Database Engine or Full-Text Search.
 - **Dropping SQL Server 2019 (`15.0.x`) from daily builds:** Microsoft never published SQL Server 2019 repositories for Ubuntu 22.04 or 24.04, and Ubuntu 20.04 reached standard EOL in May 2025. Historical `15.0.x` tags remain untouched on Docker Hub while daily security rebuilds focus on supported SQL Server 2025 and 2022 LTS tracks.
-- **Dive `highestUserWastedPercent: 0.25`:** Overall image efficiency stays strictly gated at `>= 95%`. Because the zero-binary wrapper adds only ~20 MB of open-source utilities, daily `apt-get -y upgrade` overwrites on Ubuntu LTS account for ~15–20% of user bytes while keeping total efficiency >95%.
+- **Multi-stage squashed rootfs (`FROM scratch`):** Eliminates overwritten base-layer `apt-get upgrade` files (`libc6`, `dpkg` metadata), keeping image size minimal and achieving strict Dive efficiency (`>= 95%`, user wasted `<= 5%`).
 - **Hadolint `DL3008` ignore:** Daily `--no-cache` security rebuilds intentionally pull the newest Ubuntu LTS security patches via `apt-get`.
 
 ---
