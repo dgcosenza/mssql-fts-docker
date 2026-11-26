@@ -26,11 +26,11 @@
   "base_image": "ubuntu:24.04",
   "base_digest": "sha256:562111b88caa79c71391c0c4d3c2114a7d5c35915c20561fd893cb1e07929e6b",
   "build_date": "2026-11-26",
-  "built_at_utc": "2026-11-26T01:46:28Z",
-  "image_digest": "dgcosenza/mssql-fts@sha256:5280e1f2a8a7cc52fc5e68e8fe1b68ee4ebb65724d58a42040ef3082834061f6",
-  "ghcr_digest": "ghcr.io/dgcosenza/mssql-fts@sha256:5280e1f2a8a7cc52fc5e68e8fe1b68ee4ebb65724d58a42040ef3082834061f6",
-  "image_digest_2022": "dgcosenza/mssql-fts@sha256:e24f1b8626eed1bf1d1ef4b52183eada028fba09b254dfe3f1f1b4071f0d680b",
-  "ghcr_digest_2022": "ghcr.io/dgcosenza/mssql-fts@sha256:e24f1b8626eed1bf1d1ef4b52183eada028fba09b254dfe3f1f1b4071f0d680b",
+  "built_at_utc": "2026-11-26T02:16:22Z",
+  "image_digest": "dgcosenza/mssql-fts@sha256:860f3fbaa12a6dba98ce8711fe238fdc0d6b644b03fd2e8314b0c9a9ed4bd17f",
+  "ghcr_digest": "ghcr.io/dgcosenza/mssql-fts@sha256:860f3fbaa12a6dba98ce8711fe238fdc0d6b644b03fd2e8314b0c9a9ed4bd17f",
+  "image_digest_2022": "dgcosenza/mssql-fts@sha256:78d8e25630bc1beaa5d22838590f099e753ef7f9a8c14fa374909d38f2672cec",
+  "ghcr_digest_2022": "ghcr.io/dgcosenza/mssql-fts@sha256:78d8e25630bc1beaa5d22838590f099e753ef7f9a8c14fa374909d38f2672cec",
   "fixable_critical_high": 0,
   "unfixed_cves": []
 }
