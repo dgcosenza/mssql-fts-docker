@@ -45,7 +45,7 @@ A hardened, license-compliant **Ubuntu LTS zero-binary runtime-installer wrapper
 | Published digest (`2022-latest`) | `dgcosenza/mssql-fts@sha256:612386ade6dedcca5e438b7dbddcda1f56f151c8a0d3713886066a76bb622df6` |
 | GHCR mirror (`2022-latest`) | `ghcr.io/dgcosenza/mssql-fts@sha256:612386ade6dedcca5e438b7dbddcda1f56f151c8a0d3713886066a76bb622df6` |
 | Supply chain | Cosign OIDC signed + SPDX & CycloneDX SBOM attestations + SLSA Build L3 provenance |
-| Security gate (Trivy + Grype on SBOM) | **0 fixable Critical/High** (0 upstream-unfixed) |
+| Security gate (Trivy + Grype on SBOM) | **0 fixable findings of any severity** (0 upstream-unfixed) |
 
 **Recent upstream status:**
 - **SQL Server 2025 + FTS (runtime-fetched):** `17.0.5065.9` -> `17.0.5065.9` (APT package `17.0.5065.9-3`, Ubuntu 24.04 LTS)
@@ -265,7 +265,7 @@ gh attestation verify oci://ghcr.io/dgcosenza/mssql-fts:latest --owner dgcosenza
 ## Security
 
 - **Preflight gates:** Every push and pull request runs **Hadolint** (blocking on warning+), **Gitleaks** secret scanning across full git history, and **public-content/attribution** checks.
-- **Vulnerability scan policy:** Every daily build generates **SPDX** and **CycloneDX** SBOMs with **Syft**, scans with **Trivy** (table, JSON, SARIF upload, blocking `--ignore-unfixed` gate) and **Grype** scanning the SPDX SBOM (`--only-fixed --fail-on high`), and enforces a **Dive** efficiency gate (`>= 95%`).
+- **Vulnerability scan policy (all severities with a fix):** Every daily build generates **SPDX** and **CycloneDX** SBOMs with **Syft**, scans with **Trivy** (table, JSON, SARIF upload, blocking `--ignore-unfixed` gate) and **Grype** scanning the SPDX SBOM (`--only-fixed --fail-on negligible`), and enforces a **Dive** efficiency gate (`>= 95%`).
 - **Cryptographic package verification:** Microsoft's public APT signing key is verified at image build time against exact GPG fingerprint `BC528686B50D79E339D3721CEB3E94ADBE1229CF`, and `apt-get` enforces signed `Release` verification at runtime.
 - **Upstream runtime note:** Because SQL Server packages are fetched directly from `packages.microsoft.com` at runtime, any vulnerabilities inside Microsoft's closed-source SQL Server binaries (such as Go runtime CVEs inside Microsoft's `launchpadd`/`setnetbr` helpers) are patched automatically as soon as Microsoft publishes updated Cumulative Updates (CUs).
 - **Dependency automation:** Renovate (`renovate.json`) pins base image digests and GitHub Action commit SHAs; Dependabot security alerts and OpenSSF Scorecard monitoring are enabled.
@@ -296,7 +296,7 @@ docker buildx build --platform linux/amd64 --load \
 
 1. **Preflight & upstream check:** Runs public-content checks, **Hadolint**, and **Gitleaks**; queries `https://packages.microsoft.com` APT metadata for the latest `mssql-server`, `mssql-server-fts`, and `mssql-tools18` CUs across both SQL Server 2025 (`noble`) and SQL Server 2022 (`jammy`) tracks plus the latest `ubuntu:24.04` and `ubuntu:22.04` base digests, emitting `upstream-changes.md`.
 2. **No-cache daily rebuild:** Rebuilds both tracks (`2025` and `2022`) on `linux/amd64` with `--no-cache` on schedule and `apt-get -y upgrade`.
-3. **Vulnerability fix & hard gate:** Generates **Syft** SPDX + CycloneDX SBOMs per track, computes CVE diffs against `versions.json`, uploads **Trivy** SARIF, and blocks publication on any fixable `CRITICAL` or `HIGH` finding in **Trivy** or **Grype** (scanning the SPDX SBOM), alongside the **Dive** efficiency gate.
+3. **Vulnerability fix & hard gate:** Generates **Syft** SPDX + CycloneDX SBOMs per track, computes CVE diffs against `versions.json`, uploads **Trivy** SARIF, and blocks publication on any fixable finding of any severity in **Trivy** or **Grype** (scanning the SPDX SBOM), alongside the **Dive** efficiency gate.
 4. **End-to-end live FTS smoke test:** Runs [`tests/smoke.sh`](https://github.com/dgcosenza/mssql-fts-docker/blob/main/tests/smoke.sh) on both tracks: verifies zero baked Microsoft binaries, EULA refusal without `ACCEPT_EULA=Y`, live GPG-verified installation from `packages.microsoft.com` with an ephemeral random SA password, non-root `mssql` (`10001`) execution, `mssql-fts-healthcheck`, `FULLTEXTSERVICEPROPERTY('IsFullTextInstalled') = 1`, Full-Text Catalog & Index creation + `CONTAINS` query, and negative healthcheck failure.
 5. **Dual-registry publish & signing:** Publishes identical OCI digests for both `2025` (`latest`, `2025-latest`, `2025`, `<cu>`, `<cu>-<YYYYMMDD>`, `sha-<short>`) and `2022` (`2022-latest`, `2022`, `<cu>`, `<cu>-<YYYYMMDD>`) to **GHCR** and **Docker Hub**; signs every digest and attaches SPDX/CycloneDX SBOM attestations via **Cosign** keyless OIDC; emits **SLSA Build L3** provenance; and publishes a signed **GitHub Release** with checksums and SBOMs.
 6. **Automated documentation sync:** Commits updated `versions.json`, the README `Current Versions` block, and a dated `CHANGELOG.md` entry via `github-actions[bot]` (`[skip ci]`, validated by `public-check.sh`), then syncs the Docker Hub short description and full README overview.
