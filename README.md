@@ -40,10 +40,10 @@ A hardened, license-compliant **Ubuntu LTS zero-binary runtime-installer wrapper
 | Architectures | `linux/amd64` |
 | Uncompressed size (per track) | `2025: 37.8 MB, 2022: 37.9 MB` |
 | Last verified build (UTC) | `2026-11-26` |
-| Published digest (`latest` / `2025-latest`) | `dgcosenza/mssql-fts@sha256:502572527cdf92732a75c9623e04accb9be5b2ee5f289418848f333102f7e94c` |
-| GHCR mirror (`latest` / `2025-latest`) | `ghcr.io/dgcosenza/mssql-fts@sha256:502572527cdf92732a75c9623e04accb9be5b2ee5f289418848f333102f7e94c` |
-| Published digest (`2022-latest`) | `dgcosenza/mssql-fts@sha256:5cfd018657a509a13bd040f4822b9d6084fa19ddfd4444041e15a6126c40dad9` |
-| GHCR mirror (`2022-latest`) | `ghcr.io/dgcosenza/mssql-fts@sha256:5cfd018657a509a13bd040f4822b9d6084fa19ddfd4444041e15a6126c40dad9` |
+| Published digest (`latest` / `2025-latest`) | `dgcosenza/mssql-fts@sha256:932b4a7d57922c0b89283fca0dcb46cb3991ccea53393bde1187915d7947f1e9` |
+| GHCR mirror (`latest` / `2025-latest`) | `ghcr.io/dgcosenza/mssql-fts@sha256:932b4a7d57922c0b89283fca0dcb46cb3991ccea53393bde1187915d7947f1e9` |
+| Published digest (`2022-latest`) | `dgcosenza/mssql-fts@sha256:8af10e1af7b1097cdd866bdb0fdae83462f4f6a90730217ce509a3fd6d459aca` |
+| GHCR mirror (`2022-latest`) | `ghcr.io/dgcosenza/mssql-fts@sha256:8af10e1af7b1097cdd866bdb0fdae83462f4f6a90730217ce509a3fd6d459aca` |
 | Supply chain | Cosign OIDC signed + SPDX & CycloneDX SBOM attestations + SLSA Build L3 provenance |
 | Security gate (Trivy + Grype on SBOM) | **0 fixable findings of any severity** (0 upstream-unfixed) |
 
