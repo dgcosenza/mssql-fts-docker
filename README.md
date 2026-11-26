@@ -7,6 +7,7 @@
 [![SLSA Level 3](https://img.shields.io/badge/SLSA-Level%203-brightgreen.svg)](#supply-chain-verification)
 [![Architecture](https://img.shields.io/badge/arch-amd64-informational.svg)](#supported-architectures)
 [![OpenSSF Scorecard](https://api.scorecard.dev/projects/github.com/dgcosenza/mssql-fts-docker/badge)](https://scorecard.dev/viewer/?uri=github.com/dgcosenza/mssql-fts-docker)
+[![OpenSSF Best Practices](https://www.bestpractices.dev/projects/17163/badge)](https://www.bestpractices.dev/projects/17163)
 [![Docker Pulls](https://img.shields.io/docker/pulls/dgcosenza/mssql-fts)](https://hub.docker.com/r/dgcosenza/mssql-fts)
 [![Docker Image Size](https://img.shields.io/docker/image-size/dgcosenza/mssql-fts/latest)](https://hub.docker.com/r/dgcosenza/mssql-fts)
 [![Latest Release](https://img.shields.io/github/v/release/dgcosenza/mssql-fts-docker?label=version)](https://github.com/dgcosenza/mssql-fts-docker/releases)
