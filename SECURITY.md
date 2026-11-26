@@ -9,8 +9,8 @@ Only the latest daily builds of the active tracks (`latest` / `2025-latest` on U
 ## Vulnerability Scanning & Gates
 
 - **Preflight:** Hadolint (blocking on warning+), Gitleaks full-history secret scanning, and public-content/attribution checks run on every push and pull request.
-- **Trivy** (OS + libraries): SARIF uploaded to GitHub Code Scanning; table and JSON reports retained for 90 days; **blocking hard gate** on any fixable `CRITICAL` or `HIGH` finding.
-- **Grype** (scanning Syft SPDX SBOM): **blocking hard gate** (`--only-fixed --fail-on high`); table report retained for 90 days.
+- **Trivy** (OS + libraries): SARIF uploaded to GitHub Code Scanning; table and JSON reports retained for 90 days; **blocking hard gate** on any fixable vulnerability of any severity.
+- **Grype** (scanning Syft SPDX SBOM): **blocking hard gate** (`--only-fixed --fail-on negligible`, all severities); table report retained for 90 days.
 - **SBOM & Provenance:** SPDX-JSON and CycloneDX-JSON SBOMs per track attached as Cosign keyless OIDC attestations alongside SLSA Build L3 provenance.
 - **Runtime Integrity & Secret Hygiene:** Microsoft APT signing key is verified at build time against pinned GPG fingerprint `BC528686B50D79E339D3721CEB3E94ADBE1229CF`. The built-in healthcheck reads `MSSQL_SA_PASSWORD` (or `MSSQL_SA_PASSWORD_FILE`) at runtime and passes it exclusively via `SQLCMDPASSWORD` environment variable, never via process arguments.
 
