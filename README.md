@@ -45,7 +45,7 @@ A hardened, license-compliant **Ubuntu LTS zero-binary runtime-installer wrapper
 | Published digest (`2022-latest`) | `dgcosenza/mssql-fts@sha256:e24f1b8626eed1bf1d1ef4b52183eada028fba09b254dfe3f1f1b4071f0d680b` |
 | GHCR mirror (`2022-latest`) | `ghcr.io/dgcosenza/mssql-fts@sha256:e24f1b8626eed1bf1d1ef4b52183eada028fba09b254dfe3f1f1b4071f0d680b` |
 | Supply chain | Cosign OIDC signed + SPDX & CycloneDX SBOM attestations + SLSA Build L3 provenance |
-| Security gate (Trivy + Grype on SBOM) | **0 fixable Critical/High** (0 upstream-unfixed) |
+| Security gate (Trivy + Grype on SBOM) | **0 fixable findings of any severity** (0 upstream-unfixed) |
 
 **Recent upstream status:**
 - **SQL Server 2025 + FTS (runtime-fetched):** `17.0.5065.9` -> `17.0.5065.9` (APT package `17.0.5065.9-3`, Ubuntu 24.04 LTS)
