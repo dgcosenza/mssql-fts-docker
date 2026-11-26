@@ -305,7 +305,7 @@ jobs:
           sarif_file: 'trivy-results-${{ matrix.track }}.sarif'
           category: trivy-mssql-fts-${{ matrix.track }}
 
-      - name: Scan image with Trivy — HARD GATE (0 fixable CRITICAL/HIGH, SQL Server ${{ matrix.track }})
+      - name: Scan image with Trivy — HARD GATE (0 fixable findings of any severity, SQL Server ${{ matrix.track }})
         uses: aquasecurity/trivy-action@ed142fd0673e97e23eac54620cfb913e5ce36c25 # v0.36.0
         with:
           image-ref: '${{ env.IMAGE_NAME }}:ci-candidate-${{ matrix.track }}'
@@ -315,7 +315,7 @@ jobs:
           ignore-unfixed: true
           exit-code: '1'
 
-      - name: Scan SPDX SBOM with Grype — HARD GATE (0 fixable CRITICAL/HIGH, SQL Server ${{ matrix.track }})
+      - name: Scan SPDX SBOM with Grype — HARD GATE (0 fixable findings of any severity, SQL Server ${{ matrix.track }})
         shell: bash
         env:
           TRACK: ${{ matrix.track }}
@@ -594,7 +594,7 @@ jobs:
           - **SQL Server 2025 track (\`latest\`, \`2025-latest\`):** Ubuntu 24.04 LTS (${MB_2025} MB), smoke-tested live with \`${V2025_FULL}\` + FTS \`CONTAINS\` query
           - **SQL Server 2022 track (\`2022-latest\`):** Ubuntu 22.04 LTS (${MB_2022} MB), smoke-tested live with \`${V2022_FULL}\` + FTS \`CONTAINS\` query
           - **Client tools (runtime-fetched):** \`mssql-tools18 ${TOOLS18}\`
-          - **Security gate:** 0 fixable Critical/High (Trivy + Grype on SPDX SBOM), Dive efficiency >= 95%
+          - **Security gate:** 0 fixable findings of any severity (Trivy + Grype on SPDX SBOM), Dive efficiency >= 95%
 
           ### Identical Signed Digests (GHCR + Docker Hub)
           - **2025 / latest:** \`ghcr.io/${IMAGE_NAME}@${DIG_2025}\`
