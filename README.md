@@ -1,16 +1,33 @@
 # Microsoft SQL Server + Full-Text Search Runtime Wrapper (Ubuntu LTS)
 
-[![Daily MSSQL-FTS wrapper image](https://github.com/dgcosenza/mssql-fts-docker/actions/workflows/daily.yml/badge.svg)](https://github.com/dgcosenza/mssql-fts-docker/actions/workflows/daily.yml)
-[![Packaging License: MIT](https://img.shields.io/badge/packaging-MIT-blue.svg)](https://github.com/dgcosenza/mssql-fts-docker/blob/main/LICENSE)
-[![Upstream License: Proprietary (runtime-fetched)](https://img.shields.io/badge/upstream-Proprietary--EULA-orange.svg)](https://www.microsoft.com/licensing/product-terms)
-[![Signed with Cosign](https://img.shields.io/badge/signed-cosign%20OIDC-blueviolet.svg)](#supply-chain-verification)
-[![SLSA Level 3](https://img.shields.io/badge/SLSA-Level%203-brightgreen.svg)](#supply-chain-verification)
-[![Architecture](https://img.shields.io/badge/arch-amd64-informational.svg)](#supported-architectures)
+[![Daily CI](https://github.com/dgcosenza/mssql-fts-docker/actions/workflows/daily.yml/badge.svg)](https://github.com/dgcosenza/mssql-fts-docker/actions/workflows/daily.yml)
+[![OpenSSF Scorecard Workflow](https://github.com/dgcosenza/mssql-fts-docker/actions/workflows/scorecard.yml/badge.svg)](https://github.com/dgcosenza/mssql-fts-docker/actions/workflows/scorecard.yml)
+[![Gitleaks Secret Scan](https://github.com/dgcosenza/mssql-fts-docker/actions/workflows/gitleaks.yml/badge.svg)](https://github.com/dgcosenza/mssql-fts-docker/actions/workflows/gitleaks.yml)
+[![Public Content Check](https://github.com/dgcosenza/mssql-fts-docker/actions/workflows/public-check.yml/badge.svg)](https://github.com/dgcosenza/mssql-fts-docker/actions/workflows/public-check.yml)
 [![OpenSSF Scorecard](https://api.scorecard.dev/projects/github.com/dgcosenza/mssql-fts-docker/badge)](https://scorecard.dev/viewer/?uri=github.com/dgcosenza/mssql-fts-docker)
 [![OpenSSF Best Practices](https://www.bestpractices.dev/projects/17163/badge)](https://www.bestpractices.dev/projects/17163)
-[![Docker Pulls](https://img.shields.io/docker/pulls/dgcosenza/mssql-fts)](https://hub.docker.com/r/dgcosenza/mssql-fts)
-[![Docker Image Size](https://img.shields.io/docker/image-size/dgcosenza/mssql-fts/latest)](https://hub.docker.com/r/dgcosenza/mssql-fts)
-[![Latest Release](https://img.shields.io/github/v/release/dgcosenza/mssql-fts-docker?label=version)](https://github.com/dgcosenza/mssql-fts-docker/releases)
+
+[![Trivy + Grype: 0 Fixable CVEs](https://img.shields.io/badge/Trivy%20%2B%20Grype-0%20fixable%20CVEs-brightgreen?logo=trivy&logoColor=white)](https://github.com/dgcosenza/mssql-fts-docker/security/code-scanning)
+[![Signed: Cosign OIDC](https://img.shields.io/badge/signed-Cosign%20OIDC-blueviolet)](https://github.com/dgcosenza/mssql-fts-docker#supply-chain-verification)
+[![SLSA Build L3](https://img.shields.io/badge/SLSA-Build%20L3-brightgreen)](https://github.com/dgcosenza/mssql-fts-docker/attestations)
+[![SBOM: SPDX + CycloneDX](https://img.shields.io/badge/SBOM-SPDX%20%2B%20CycloneDX-0A7BBB?logo=spdx&logoColor=white)](https://github.com/dgcosenza/mssql-fts-docker/releases/latest)
+[![Base OS](https://img.shields.io/badge/base-Ubuntu%2024.04%20LTS-E95420?logo=ubuntu&logoColor=white)](https://github.com/dgcosenza/mssql-fts-docker/blob/main/Dockerfile)
+[![Architectures](https://img.shields.io/badge/arch-amd64-007ec6?logo=linux&logoColor=white)](https://github.com/dgcosenza/mssql-fts-docker#supported-architectures)
+[![Healthcheck: CI Verified](https://img.shields.io/badge/healthcheck-CI%20verified-brightgreen?logo=docker&logoColor=white)](https://github.com/dgcosenza/mssql-fts-docker#healthcheck)
+[![Renovate Enabled](https://img.shields.io/badge/renovate-enabled-1A1F6C?logo=renovate&logoColor=white)](https://github.com/dgcosenza/mssql-fts-docker/blob/main/renovate.json)
+[![Dependabot Enabled](https://img.shields.io/badge/dependabot-enabled-025E8C?logo=dependabot&logoColor=white)](https://github.com/dgcosenza/mssql-fts-docker/blob/main/.github/dependabot.yml)
+[![Daily Rebuilds](https://img.shields.io/badge/rebuilds-daily-2088FF?logo=githubactions&logoColor=white)](https://github.com/dgcosenza/mssql-fts-docker/actions/workflows/daily.yml)
+
+[![Latest Release](https://img.shields.io/github/v/release/dgcosenza/mssql-fts-docker?label=version&logo=github)](https://github.com/dgcosenza/mssql-fts-docker/releases/latest)
+[![Release Date](https://img.shields.io/github/release-date/dgcosenza/mssql-fts-docker?label=released&logo=github)](https://github.com/dgcosenza/mssql-fts-docker/releases/latest)
+[![Last Commit](https://img.shields.io/github/last-commit/dgcosenza/mssql-fts-docker?logo=github)](https://github.com/dgcosenza/mssql-fts-docker/commits/main)
+[![Docker Pulls](https://img.shields.io/docker/pulls/dgcosenza/mssql-fts?logo=docker&logoColor=white)](https://hub.docker.com/r/dgcosenza/mssql-fts)
+[![Docker Image Size](https://img.shields.io/docker/image-size/dgcosenza/mssql-fts/latest?logo=docker&logoColor=white)](https://hub.docker.com/r/dgcosenza/mssql-fts)
+[![Registries: Docker Hub + GHCR](https://img.shields.io/badge/registries-Docker%20Hub%20%2B%20GHCR-2496ED?logo=docker&logoColor=white)](https://github.com/dgcosenza/mssql-fts-docker/pkgs/container/mssql-fts)
+[![Packaging License: MIT](https://img.shields.io/badge/packaging-MIT-blue?logo=opensourceinitiative&logoColor=white)](https://github.com/dgcosenza/mssql-fts-docker/blob/main/LICENSE)
+[![Upstream License](https://img.shields.io/badge/upstream-Proprietary--EULA-orange?logo=opensourceinitiative&logoColor=white)](https://www.microsoft.com/licensing/product-terms)
+[![GitHub Issues](https://img.shields.io/github/issues/dgcosenza/mssql-fts-docker?logo=github)](https://github.com/dgcosenza/mssql-fts-docker/issues)
+[![FNX Labs Catalog](https://img.shields.io/badge/catalog-FNX%20Labs-0b1020?logo=githubpages&logoColor=white)](https://dgcosenza.github.io/)
 
 A hardened, license-compliant **Ubuntu LTS zero-binary runtime-installer wrapper** for **Microsoft SQL Server Database Engine (2025 & 2022) with Full-Text Search (`mssql-server-fts`)** and `mssql-tools18`, featuring `tini` PID 1, GPG-verified startup installation directly from `packages.microsoft.com`, non-root execution (`mssql`, UID `10001`, GID `0`), and a leak-free `sqlcmd` healthcheck — maintained by **Daniel G. Cosenza from FNX Labs**.
 
@@ -25,7 +42,6 @@ A hardened, license-compliant **Ubuntu LTS zero-binary runtime-installer wrapper
 
 > **Breaking Change Notice (SQL Server 2019 -> 2025 / 2022):** Earlier builds of `dgcosenza/mssql-fts:latest` bundled SQL Server 2019 (`15.0.x`) on Ubuntu 20.04 (`focal`). Ubuntu 20.04 reached standard EOL in May 2025 and Microsoft never published SQL Server 2019 repositories for Ubuntu 22.04 or 24.04. Starting `2026-11-25`, `latest` tracks **SQL Server 2025 (`2025-latest`, Ubuntu 24.04 LTS)** and a separate **`2022-latest` (`16.0.x`, Ubuntu 22.04 LTS)** track is also maintained daily. Historical `15.0.4510.2-20261121` and `15.0.4375.4-20240716` tags remain preserved on Docker Hub for legacy rollback.
 
----
 
 ## Current Versions
 
@@ -56,7 +72,6 @@ A hardened, license-compliant **Ubuntu LTS zero-binary runtime-installer wrapper
 - **Proprietary binaries in published image:** `None (0)` — packages are downloaded and GPG-verified at container startup after `ACCEPT_EULA=Y`.
 <!-- versions:end -->
 
----
 
 ## Supported Tags & Tag Policy
 
@@ -81,7 +96,6 @@ image: dgcosenza/mssql-fts:2025-latest@sha256:<digest>
 image: ghcr.io/dgcosenza/mssql-fts:2025-latest@sha256:<digest>
 ```
 
----
 
 ## Supported Architectures
 
@@ -90,20 +104,12 @@ image: ghcr.io/dgcosenza/mssql-fts:2025-latest@sha256:<digest>
 | `linux/amd64` | **Published & natively tested** | Built, verified zero proprietary binaries, end-to-end smoke-tested with live `packages.microsoft.com` installation + Full-Text Search `CONTAINS` query, Dive-gated, Syft/Trivy/Grype-scanned, and Cosign-signed. |
 | `linux/arm64` | **Not supported upstream** | Microsoft does not publish Linux `arm64` packages for `mssql-server` or `mssql-server-fts` (`packages.microsoft.com` `binary-arm64` indexes are empty). |
 
----
 
 ## Quick Start
 
-### SA Password Complexity Rules
+### SA Password Complexity
 
-Microsoft SQL Server enforces strict password complexity for the `sa` account. Your `MSSQL_SA_PASSWORD` **must** be at least **8 characters long** and include characters from at least **three** of the following four categories:
-
-- Uppercase letters (`A–Z`)
-- Lowercase letters (`a–z`)
-- Base-10 digits (`0–9`)
-- Non-alphanumeric symbols (e.g. `!`, `@`, `#`, `$`, `%`)
-
-Never hardcode weak passwords in compose files or shell history. Load `MSSQL_SA_PASSWORD` from a protected `.env` file (`chmod 600`) or mount a Docker secret via `MSSQL_SA_PASSWORD_FILE`.
+`MSSQL_SA_PASSWORD` must be >=8 chars with >=3 of: uppercase, lowercase, digits, symbols. Supply it via a `chmod 600` `.env` file or `MSSQL_SA_PASSWORD_FILE` Docker secret — never hardcode it.
 
 ### Docker CLI
 
@@ -175,7 +181,6 @@ docker exec -e SQLCMDPASSWORD="${MSSQL_SA_PASSWORD}" mssql-fts \
 
 Expected output: `1`.
 
----
 
 ## Configuration
 
@@ -205,7 +210,6 @@ Expected output: `1`.
 
 The entrypoint runs briefly as `root` on first start solely to install GPG-verified `mssql-server`, `mssql-server-fts`, and `mssql-tools18` packages and normalize `/var/opt/mssql` ownership to `10001:0`, then drops privileges via `setpriv` to non-root **`mssql` (`UID=10001`, `GID=0`)** before `exec`ing `/opt/mssql/bin/sqlservr` under `tini`.
 
----
 
 ## Healthcheck
 
@@ -215,7 +219,6 @@ The entrypoint runs briefly as `root` on first start solely to install GPG-verif
 
 Runs `/opt/mssql-tools18/bin/sqlcmd -S 127.0.0.1,${MSSQL_TCP_PORT} -U sa -C -l 5 -t 5 -b -h -1 -Q "SET NOCOUNT ON; SELECT 1"`. The SA password is read at runtime from `MSSQL_SA_PASSWORD` (or `MSSQL_SA_PASSWORD_FILE`) and exported solely via `SQLCMDPASSWORD` so credentials never appear in `ps` / `/proc` arguments.
 
----
 
 ## Upgrade and Migration from SQL Server 2019 (`15.0.x`)
 
@@ -224,7 +227,6 @@ Runs `/opt/mssql-tools18/bin/sqlcmd -S 127.0.0.1,${MSSQL_TCP_PORT} -U sa -C -l 5
 3. Choose `dgcosenza/mssql-fts:2022-latest` (SQL Server 2022 on Ubuntu 22.04 LTS) or `dgcosenza/mssql-fts:2025-latest` / `latest` (SQL Server 2025 on Ubuntu 24.04 LTS).
 4. Replace any legacy `SA_PASSWORD` with `MSSQL_SA_PASSWORD` (or `MSSQL_SA_PASSWORD_FILE`) sourced from a secure secret store.
 
----
 
 ## Supply-Chain Verification
 
@@ -238,11 +240,7 @@ cosign verify \
   --certificate-oidc-issuer="https://token.actions.githubusercontent.com" \
   ghcr.io/dgcosenza/mssql-fts:latest
 
-# Or against Docker Hub (identical digest):
-cosign verify \
-  --certificate-identity-regexp="^https://github\.com/dgcosenza/mssql-fts-docker/\.github/workflows/daily\.yml@refs/heads/main$" \
-  --certificate-oidc-issuer="https://token.actions.githubusercontent.com" \
-  dgcosenza/mssql-fts:latest
+# Identical digest on Docker Hub: replace ghcr.io/dgcosenza/mssql-fts:latest with dgcosenza/mssql-fts:latest
 ```
 
 ### Verify SPDX / CycloneDX SBOM attestations
@@ -261,7 +259,6 @@ cosign verify-attestation \
 gh attestation verify oci://ghcr.io/dgcosenza/mssql-fts:latest --owner dgcosenza
 ```
 
----
 
 ## Security
 
@@ -272,7 +269,6 @@ gh attestation verify oci://ghcr.io/dgcosenza/mssql-fts:latest --owner dgcosenza
 - **Dependency automation:** Renovate (`renovate.json`) pins base image digests and GitHub Action commit SHAs; Dependabot security alerts and OpenSSF Scorecard monitoring are enabled.
 - See [`SECURITY.md`](https://github.com/dgcosenza/mssql-fts-docker/blob/main/SECURITY.md) for responsible disclosure.
 
----
 
 ## Build Locally
 
@@ -289,32 +285,25 @@ docker buildx build --platform linux/amd64 --load \
   -t dgcosenza/mssql-fts:2022-local .
 ```
 
----
 
 ## Update Policy
 
 [`.github/workflows/daily.yml`](https://github.com/dgcosenza/mssql-fts-docker/blob/main/.github/workflows/daily.yml) runs automatically every day at **05:39 UTC**, on pushes to `main`, on pull requests (verification only), and via `workflow_dispatch`:
 
-1. **Preflight & upstream check:** Runs public-content checks, **Hadolint**, and **Gitleaks**; queries `https://packages.microsoft.com` APT metadata for the latest `mssql-server`, `mssql-server-fts`, and `mssql-tools18` CUs across both SQL Server 2025 (`noble`) and SQL Server 2022 (`jammy`) tracks plus the latest `ubuntu:24.04` and `ubuntu:22.04` base digests, emitting `upstream-changes.md`.
-2. **No-cache daily rebuild:** Rebuilds both tracks (`2025` and `2022`) on `linux/amd64` with `--no-cache` on schedule and `apt-get -y upgrade`.
-3. **Vulnerability fix & hard gate:** Generates **Syft** SPDX + CycloneDX SBOMs per track, computes CVE diffs against `versions.json`, uploads **Trivy** SARIF, and blocks publication on any fixable finding of any severity in **Trivy** or **Grype** (scanning the SPDX SBOM), alongside the **Dive** efficiency gate.
-4. **End-to-end live FTS smoke test:** Runs [`tests/smoke.sh`](https://github.com/dgcosenza/mssql-fts-docker/blob/main/tests/smoke.sh) on both tracks: verifies zero baked Microsoft binaries, EULA refusal without `ACCEPT_EULA=Y`, live GPG-verified installation from `packages.microsoft.com` with an ephemeral random SA password, non-root `mssql` (`10001`) execution, `mssql-fts-healthcheck`, `FULLTEXTSERVICEPROPERTY('IsFullTextInstalled') = 1`, Full-Text Catalog & Index creation + `CONTAINS` query, and negative healthcheck failure.
-5. **Dual-registry publish & signing:** Publishes identical OCI digests for both `2025` (`latest`, `2025-latest`, `2025`, `<cu>`, `<cu>-<YYYYMMDD>`, `sha-<short>`) and `2022` (`2022-latest`, `2022`, `<cu>`, `<cu>-<YYYYMMDD>`) to **GHCR** and **Docker Hub**; signs every digest and attaches SPDX/CycloneDX SBOM attestations via **Cosign** keyless OIDC; emits **SLSA Build L3** provenance; and publishes a signed **GitHub Release** with checksums and SBOMs.
-6. **Automated documentation sync:** Commits updated `versions.json`, the README `Current Versions` block, and a dated `CHANGELOG.md` entry via `github-actions[bot]` (`[skip ci]`, validated by `public-check.sh`), then syncs the Docker Hub short description and full README overview.
-7. **Failure alerting:** Opens or updates a single GitHub issue labeled `ci-failure` on any `main` or scheduled failure, and auto-closes it on the next green run.
+1. **Preflight & resolve:** Public-content check, Hadolint, Gitleaks; queries `packages.microsoft.com` for SQL Server 2025/2022 CUs, `mssql-tools18`, and `ubuntu:{24.04,22.04}` base digests.
+2. **No-cache rebuild & gates:** Daily `--no-cache` build on `linux/amd64`, Syft SPDX/CycloneDX SBOMs, Dive >=95%, Trivy + Grype (0 fixable CVEs of any severity), SARIF upload.
+3. **Live FTS smoke test ([`tests/smoke.sh`](https://github.com/dgcosenza/mssql-fts-docker/blob/main/tests/smoke.sh)):** Asserts zero baked Microsoft binaries, EULA guard, live GPG-verified install, non-root `mssql` (`10001`), healthcheck, and Full-Text `CONTAINS` query.
+4. **Publish & attest:** Mirrors identical signed digests for `2025` and `2022` tracks to GHCR, Docker Hub, and configured secondary registries; Cosign OIDC signatures + SBOM attestations + SLSA L3 + signed GitHub Release.
+5. **Docs sync & alerts:** Bot-updates `versions.json`, README versions, `CHANGELOG.md`, and Docker Hub overview; manages a single `ci-failure` issue.
 
----
 
 ## Design Decisions
 
-- **Zero-binary runtime-installer wrapper (license compliance):** Microsoft Software License Terms do not permit public third-party redistribution of SQL Server binaries. Keeping the published container image strictly open-source Ubuntu LTS + MIT scripts guarantees full license compliance while letting end users accept `ACCEPT_EULA=Y` and install GPG-verified official Microsoft packages automatically at startup.
-- **Ubuntu 24.04 LTS / 22.04 LTS base instead of Debian 13:** Microsoft officially publishes and supports `mssql-server` and `mssql-server-fts` APT repositories only on Ubuntu LTS (not Debian). Using Ubuntu 24.04 LTS (for SQL Server 2025) and Ubuntu 22.04 LTS (for SQL Server 2022) follows Microsoft's official support matrix.
-- **`linux/amd64` only:** Microsoft does not publish ARM64 Linux packages for SQL Server Database Engine or Full-Text Search.
-- **Dropping SQL Server 2019 (`15.0.x`) from daily builds:** Microsoft never published SQL Server 2019 repositories for Ubuntu 22.04 or 24.04, and Ubuntu 20.04 reached standard EOL in May 2025. Historical `15.0.x` tags remain untouched on Docker Hub while daily security rebuilds focus on supported SQL Server 2025 and 2022 LTS tracks.
-- **Multi-stage squashed rootfs (`FROM scratch`):** Eliminates overwritten base-layer `apt-get upgrade` files (`libc6`, `dpkg` metadata), keeping image size minimal and achieving strict Dive efficiency (`>= 95%`, user wasted `<= 5%`).
-- **Hadolint `DL3008` ignore:** Daily `--no-cache` security rebuilds intentionally pull the newest Ubuntu LTS security patches via `apt-get`.
+- **Zero-binary runtime wrapper:** Complies with Microsoft License Terms (no binary redistribution); installs GPG-verified packages at startup after `ACCEPT_EULA=Y`.
+- **Ubuntu 24.04 / 22.04 LTS (`linux/amd64` only):** Microsoft publishes `mssql-server` / `mssql-server-fts` APT repos only for Ubuntu LTS on `amd64`.
+- **SQL Server 2025 & 2022 tracks:** Replaces EOL Ubuntu 20.04 / SQL Server 2019 (historical `15.0.x` tags remain frozen on Docker Hub).
+- **Squashed `FROM scratch` rootfs + `DL3008`:** Minimizes layers (`Dive >= 95%`) while daily `--no-cache` builds pull latest Ubuntu security patches.
 
----
 
 ## License
 
