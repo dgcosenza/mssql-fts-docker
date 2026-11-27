@@ -10,6 +10,22 @@ Maintained by **Daniel G. Cosenza from FNX Labs**.
 
 <!-- changelog:auto -->
 
+## [17.0.5065.9] — 2026-11-27
+
+### Automated Daily Build
+- Verified components: 2025 Track Base OS `Ubuntu 24.04 (noble)`, 2025 Track Tested CU (runtime-fetched) `17.0.5065.9-3`, 2022 Track Base OS `Ubuntu 22.04 (jammy)`, 2022 Track Tested CU (runtime-fetched) `16.0.4325.4-2`, Client Tools (runtime-fetched) `mssql-tools18 18.7.1.1-1`, Proprietary Binaries in Published Image `None (0)`.
+- Upstream status:
+  - **SQL Server 2025 + FTS (runtime-fetched):** `17.0.5065.9` -> `17.0.5065.9` (APT package `17.0.5065.9-3`, Ubuntu 24.04 LTS)
+  - **SQL Server 2022 + FTS (runtime-fetched):** `16.0.4325.4` (APT package `16.0.4325.4-2`, Ubuntu 22.04 LTS)
+  - **mssql-tools18 (runtime-fetched):** `18.7.1.1-1`
+  - **Primary track version changed:** `no`
+  - **Proprietary binaries in published image:** `None (0)` — packages are downloaded and GPG-verified at container startup after `ACCEPT_EULA=Y`.
+- Vulnerability gate: **0 fixable findings of any severity** in Trivy and Grype (SBOM scan) (0 upstream-unfixed).
+- Published 2025/latest digest (Docker Hub + GHCR): `dgcosenza/mssql-fts@sha256:1a2c96da7fbc32ea9a4301bb598e8c31666f989a76f4dbe032a44c40e7f4184d` (Cosign OIDC signed + SPDX/CycloneDX SBOM + SLSA L3 provenance).
+- Published 2022-latest digest (Docker Hub + GHCR): `dgcosenza/mssql-fts@sha256:1c6052bd4173d868b36cb1c11d1981da1b9b8b4090d8e60ee440fa6700729cb4`.
+
+---
+
 ## [17.0.5065.9] — 2026-11-26
 
 ### Automated Daily Build
