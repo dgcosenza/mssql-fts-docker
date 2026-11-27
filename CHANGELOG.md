@@ -21,9 +21,8 @@ Maintained by **Daniel G. Cosenza from FNX Labs**.
   - **Primary track version changed:** `no`
   - **Proprietary binaries in published image:** `None (0)` — packages are downloaded and GPG-verified at container startup after `ACCEPT_EULA=Y`.
 - Vulnerability gate: **0 fixable findings of any severity** in Trivy and Grype (SBOM scan) (0 upstream-unfixed).
-- Published 2025/latest digest (Docker Hub + GHCR): `dgcosenza/mssql-fts@sha256:1a2c96da7fbc32ea9a4301bb598e8c31666f989a76f4dbe032a44c40e7f4184d` (Cosign OIDC signed + SPDX/CycloneDX SBOM + SLSA L3 provenance).
-- Published 2022-latest digest (Docker Hub + GHCR): `dgcosenza/mssql-fts@sha256:1c6052bd4173d868b36cb1c11d1981da1b9b8b4090d8e60ee440fa6700729cb4`.
-
+- Published 2025/latest digest (Docker Hub + GHCR): `dgcosenza/mssql-fts@sha256:dd0d7141162fb847a2e53f999fe85ac53dd7da8376593606efac9d5da2996afd` (Cosign OIDC signed + SPDX/CycloneDX SBOM + SLSA L3 provenance).
+- Published 2022-latest digest (Docker Hub + GHCR): `dgcosenza/mssql-fts@sha256:50f58726166e2457d21b918be057ad5e930edc3dce7fd5f9609bbd2100324630`.
 ---
 
 ## [17.0.5065.9] — 2026-11-26
